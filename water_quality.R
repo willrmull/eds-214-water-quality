@@ -4,6 +4,7 @@ library(tidyverse)
 library(lubridate)
 source("moving_average.R")
 
+#awefawefawef
 bq1 <- read.csv(here::here("data", "knb-lter-luq.20.4923064", "QuebradaCuenca1-Bisley.csv")) %>%
   clean_names() %>%
   mutate(sample_id = case_when(
