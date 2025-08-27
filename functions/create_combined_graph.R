@@ -7,6 +7,7 @@
 #'
 #' @examples
 #' create_combined_graph()
+#' returns graph 
 #' 
 
 create_combined_graph <- function(){
