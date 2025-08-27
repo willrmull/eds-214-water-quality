@@ -6,7 +6,7 @@
 #'
 #' @return weeks_since
 #' @export none
-#'
+#
 #' @examples
 #' weeks_since_start(bq1)
 weeks_since <- c()
@@ -17,3 +17,8 @@ weeks_since_start <- function(input_dataframe) {
   }
   return(weeks_since)
 }
+
+
+         
+interval(start = as.date(1988),
+         end = input_dataframe[i, "sample_date"]) / lubridate::weeks(1)
