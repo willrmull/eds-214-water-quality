@@ -1,3 +1,14 @@
+#' create_combined_graph
+#' 
+#' This function takes in no arguments
+#'
+#' @return Returns a ggplot of five stacked graphs which has all been formatted
+#' @export None
+#'
+#' @examples
+#' create_combined_graph()
+#' 
+
 create_combined_graph <- function(){
 #K plot
 k_plot <- ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_k, group = data_source, colour = data_source)) +

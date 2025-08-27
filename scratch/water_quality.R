@@ -12,6 +12,7 @@ library(paletteer)
 source("functions/roll_mean.R")
 source("functions/weeks_since_start.R")
 source("functions/weeks_to_dates.R")
+source("functions/create_combined_graph.R")
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                                                                            --
@@ -83,8 +84,9 @@ merged_data_frame <- bind_rows(bq1_cleaned, bq2_cleaned, bq3_cleaned, pmr_cleane
   ))
 
 # Runs the testing file
-merged_plots <- testing() + plot_layout(axes = "collect", guides = "collect") & 
+merged_plots <- create_combined_graph() + plot_layout(axes = "collect", guides = "collect") & 
   theme(plot.margin = unit(c(0.1,0.1,0.1,0.1), "cm"), 
         axis.title.x = element_text(hjust = 0.5, size = 15))
 merged_plots
 
+ggsave(plot = merged_plots, here::here("figs", "merged_plots.jpg"), width = 6, height = 4)

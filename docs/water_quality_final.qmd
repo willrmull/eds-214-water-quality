@@ -104,4 +104,6 @@ merged_plots <- create_combined_graph() + plot_layout(axes = "collect", guides =
         axis.title.x = element_text(hjust = 0.5, size = 15))
 merged_plots
 
+
+ggsave(here::here("figs", ))
 ```
