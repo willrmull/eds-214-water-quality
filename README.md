@@ -11,4 +11,5 @@ Will add later once files are finalized
   > Initiative. https://doi.org/10.6073/pasta/f31349bebdc304f758718f4798d25458 
   > (Accessed 2025-08-26)
 > 
-<img src="[decorative-image.jpg](https://github.com/willrmull/eds-214-water-quality/outputs/figs/merged_plots.jpg )" alt="">
+
+![](https://github.com/willrmull/eds-214-water-quality/outputs/figs/merged_plots.jpg "Figure 1")
