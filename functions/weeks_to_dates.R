@@ -9,6 +9,7 @@
 #' @export
 #'
 #' @examples input_data frame(bq1_cleaned)
+#' 
 weeks_to_dates <- function(input_dataframe) {
   # The initial date of observation
   start_date <- as.Date("1988-1-1") 
