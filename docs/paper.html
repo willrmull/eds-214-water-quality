@@ -8,7 +8,7 @@
 
 <meta name="author" content="William Mullins">
 
-<title>paper</title>
+<title>Hurricane Effect on Water Quality</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -34,39 +34,46 @@ ul.task-list li input[type="checkbox"] {
 <script src="paper_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="paper_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="paper_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<style>
+
+      .quarto-title-block .quarto-title-banner {
+        background: dark;
+      }
+</style>
 
 
 </head>
 
 <body class="fullcontent">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">paper</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>William Mullins </p>
-          </div>
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Hurricane Effect on Water Quality</h1>
+                      </div>
   </div>
     
   
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>William Mullins </p>
+            </div>
+    </div>
+      
     
-  </div>
+      
+    </div>
+    
   
+  </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-</header>
+
 
 
 <h1>
@@ -76,21 +83,101 @@ Background
 Will write here later
 </p><p>
 </p><div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>  X data_source rolling_mean_k rolling_mean_no3_n rolling_mean_mg
-1 1         BQ1      0.7875000           154.3750        2.188125
-2 2         BQ1      0.9012500           206.9375        1.993750
-3 3         BQ1      0.9238889           203.8889        1.961667
-4 4         BQ1      0.8766667           151.7000        2.251000
-5 5         BQ1      0.8811111           157.5000        2.033636
-6 6         BQ1      0.7655556                 NA        2.267000
-  rolling_mean_ca rolling_mean_nh4_n week       date
-1        3.449375           27.37500  4.5 1988-01-29
-2        3.103750           20.68750  9.0 1988-03-04
-3        3.085000           24.05556 13.5 1988-04-01
-4        3.190000           64.20000 18.0 1988-05-06
-5        2.985000           90.62500 22.5 1988-06-03
-6        3.297778          113.00000 27.0 1988-07-08</code></pre>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 10%">
+<col style="width: 12%">
+<col style="width: 16%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 16%">
+<col style="width: 4%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">X</th>
+<th style="text-align: left;">data_source</th>
+<th style="text-align: right;">rolling_mean_k</th>
+<th style="text-align: right;">rolling_mean_no3_n</th>
+<th style="text-align: right;">rolling_mean_mg</th>
+<th style="text-align: right;">rolling_mean_ca</th>
+<th style="text-align: right;">rolling_mean_nh4_n</th>
+<th style="text-align: right;">week</th>
+<th style="text-align: left;">date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">BQ1</td>
+<td style="text-align: right;">0.7875000</td>
+<td style="text-align: right;">154.3750</td>
+<td style="text-align: right;">2.188125</td>
+<td style="text-align: right;">3.449375</td>
+<td style="text-align: right;">27.37500</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: left;">1988-01-29</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">BQ1</td>
+<td style="text-align: right;">0.9012500</td>
+<td style="text-align: right;">206.9375</td>
+<td style="text-align: right;">1.993750</td>
+<td style="text-align: right;">3.103750</td>
+<td style="text-align: right;">20.68750</td>
+<td style="text-align: right;">9.0</td>
+<td style="text-align: left;">1988-03-04</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">BQ1</td>
+<td style="text-align: right;">0.9238889</td>
+<td style="text-align: right;">203.8889</td>
+<td style="text-align: right;">1.961667</td>
+<td style="text-align: right;">3.085000</td>
+<td style="text-align: right;">24.05556</td>
+<td style="text-align: right;">13.5</td>
+<td style="text-align: left;">1988-04-01</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">BQ1</td>
+<td style="text-align: right;">0.8766667</td>
+<td style="text-align: right;">151.7000</td>
+<td style="text-align: right;">2.251000</td>
+<td style="text-align: right;">3.190000</td>
+<td style="text-align: right;">64.20000</td>
+<td style="text-align: right;">18.0</td>
+<td style="text-align: left;">1988-05-06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">BQ1</td>
+<td style="text-align: right;">0.8811111</td>
+<td style="text-align: right;">157.5000</td>
+<td style="text-align: right;">2.033636</td>
+<td style="text-align: right;">2.985000</td>
+<td style="text-align: right;">90.62500</td>
+<td style="text-align: right;">22.5</td>
+<td style="text-align: left;">1988-06-03</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">BQ1</td>
+<td style="text-align: right;">0.7655556</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">2.267000</td>
+<td style="text-align: right;">3.297778</td>
+<td style="text-align: right;">113.00000</td>
+<td style="text-align: right;">27.0</td>
+<td style="text-align: left;">1988-07-08</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <h1>
@@ -106,26 +193,12 @@ Results
 Will write here later
 </p><p>
 </p><div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 12 rows containing missing values or values outside the scale range
-(`geom_line()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 275 rows containing missing values or values outside the scale range
-(`geom_line()`).</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
 <p><img src="paper_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 12 rows containing missing values or values outside the scale range
-(`geom_line()`).
-Removed 275 rows containing missing values or values outside the scale range
-(`geom_line()`).</code></pre>
 </div>
 </div>
 

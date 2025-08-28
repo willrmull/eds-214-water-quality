@@ -10,7 +10,7 @@
 #' returns graph 
 #' 
 
-create_combined_graph <- function(){
+create_combined_graph <- function(merged_data_frame){
 #K plot
 k_plot <- ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_k, group = data_source, colour = data_source)) +
   geom_line() +

@@ -1,5 +1,6 @@
 ---
-title: "paper"
+title: Hurricane Effect on Water Quality
+title-block-banner: "dark"
 author: "William Mullins"
 theme: flatly
 format: 
@@ -8,7 +9,7 @@ format:
 ---
 ```{r}
 #| include: false
-
+ 
 #Install Required Packages
 library(here)
 library(janitor)
@@ -55,7 +56,8 @@ merged_data_frame <- read.csv(here::here("outputs", "clean_data.csv"))
 merged_data_frame$date <-lubridate::as_date(merged_data_frame$date)
 
 # View
-head(merged_data_frame)
+data_sub <- head(merged_data_frame) 
+knitr::kable(data_sub)
 ```
 
 <h1>Methods</h1>
@@ -67,17 +69,16 @@ head(merged_data_frame)
 <h1>Results</h1>
 <p>Will write here later<p>
 
-```{r, echo = FALSE}
-#Plotting the data
+```{r, echo = FALSE, warning=FALSE}
+# Plotting the data
 # Runs the testing file
-
-merged_plots <- create_combined_graph() + plot_layout(axes = "collect", guides = "collect") & 
+merged_plots <- create_combined_graph(merged_data_frame) + plot_layout(axes = "collect", guides = "collect") & 
   theme(plot.margin = unit(c(0.1,0.1,0.1,0.1), "cm"), 
         axis.title.x = element_text(hjust = 0.5, size = 15))
 
 
 merged_plots 
-
+ 
 ggsave(plot = merged_plots, here::here("outputs", "figs", "merged_plots.jpg"), width = 6, height = 4)
 
 ```
