@@ -12,4 +12,4 @@ Will add later once files are finalized
   > (Accessed 2025-08-26)
 > 
 
-![](https://github.com/willrmull/eds-214-water-quality/outputs/figs/merged_plots.jpg "Figure 1")
+![ ](https://github.com/willrmull/eds-214-water-quality/outputs/figs/merged_plots.jpg "Figure 1")
