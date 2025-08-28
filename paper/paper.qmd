@@ -27,7 +27,6 @@ source("../functions/roll_mean.R")
 source("../functions/weeks_since_start.R")
 source("../functions/weeks_to_dates.R")
 source("../functions/create_combined_graph.R")
-source("../functions/data_import_and_cleaning.R")
 ```
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -35,9 +34,13 @@ source("../functions/data_import_and_cleaning.R")
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ```{r}
-merged_data_frame <- data_import_and_cleaning()
+# Read in clean data
+merged_data_frame <- read.csv(here::here("data", "clean_data.csv"))
+merged_data_frame$date <-lubridate::as_date(merged_data_frame$date)
 
+# View
 head(merged_data_frame)
+
 ```
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -45,7 +48,7 @@ head(merged_data_frame)
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ```{r}
-#Plotting the data
+#P lotting the data
 # Runs the testing file
 merged_plots <- create_combined_graph() + plot_layout(axes = "collect", guides = "collect") & 
   theme(plot.margin = unit(c(0.1,0.1,0.1,0.1), "cm"), 
@@ -55,7 +58,6 @@ merged_plots <- create_combined_graph() + plot_layout(axes = "collect", guides =
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                                  Results                                 ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 ```{r}
 merged_plots 
