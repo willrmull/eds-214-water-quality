@@ -13,4 +13,4 @@ Will add later once files are finalized
 > 
 <img src="outputs/figs/merged_plots.jpg" class="inline"/>
 
-![alt text](https://github.com/willrmull/eds-214-water-quality/outputs/figs/merged_plots.jpg "Figure 1")
+(https://github.com/willrmull/eds-214-water-quality/outputs/figs/merged_plots.jpg "Figure 1")
