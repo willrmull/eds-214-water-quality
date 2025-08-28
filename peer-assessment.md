@@ -63,7 +63,7 @@ When the analysis script is ran in the repository, no errors appear in the Conso
 
 ## [Meets spec] *The student has provided attentive, constructive feedback in a peer review*
 
-## [Not yet] *The student has contributed to a peer’s repo by opening an issue and creating a pull request*
+## [Meets spec] *The student has contributed to a peer’s repo by opening an issue and creating a pull request*
 
 
 ## [Not yet] The repo has at least three closed GitHub issues
