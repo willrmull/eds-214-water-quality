@@ -1,5 +1,12 @@
-data_import_and_cleaning <- function(){
-  # Reading in each file and creating a subset of the data we are interested in
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                                                            ~~
+##                           CLEAN AND READ IN DATA                         ----
+##                                                                            ~~
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Reading in each file and creating a subset of the data we are interested in
   bq1 <- read.csv(here::here("data", "knb-lter-luq.20.4923064", "QuebradaCuenca1-Bisley.csv")) %>%
     clean_names() %>%
     mutate(sample_id = case_when(
@@ -61,6 +68,6 @@ data_import_and_cleaning <- function(){
       data_source == 4 ~ "PRM"
     ))
   return(merged_data_frame)
-  write.csv(merged_data_frame, here::here("data", "merged_data_frame.csv"))
-}
+  write.csv(merged_data_frame, here::here("outputs", "clean_data.csv"))
+
 

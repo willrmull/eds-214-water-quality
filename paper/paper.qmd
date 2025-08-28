@@ -1,13 +1,30 @@
 ---
 title: "paper"
 author: "William Mullins"
+theme: flatly
 format: 
   html:
     ouput-file: "paper.html"
 ---
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                                 Background                               ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```{r}
+#| include: false
+
+#Install Required Packages
+library(here)
+library(janitor)
+library(tidyverse)
+library(lubridate)
+library(patchwork)
+library(hrbrthemes)
+library(viridis)
+library(paletteer)
+
+# Load functions 
+source("../R/roll_mean.R")
+source("../R/weeks_since_start.R")
+source("../R/weeks_to_dates.R")
+source("../R/create_combined_graph.R")
+```
 
 ```{r}
 #| include: false
@@ -23,44 +40,44 @@ library(viridis)
 library(paletteer)
 
 # Load functions 
-source("../functions/roll_mean.R")
-source("../functions/weeks_since_start.R")
-source("../functions/weeks_to_dates.R")
-source("../functions/create_combined_graph.R")
+source("../R/roll_mean.R")
+source("../R/weeks_since_start.R")
+source("../R/weeks_to_dates.R")
+source("../R/create_combined_graph.R")
 ```
 
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                                    Data                                  ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<h1>Background</h1>
+<p>Will write here later<p>
 
-```{r}
+```{r, echo = FALSE}
 # Read in clean data
-merged_data_frame <- read.csv(here::here("data", "clean_data.csv"))
+merged_data_frame <- read.csv(here::here("outputs", "clean_data.csv"))
 merged_data_frame$date <-lubridate::as_date(merged_data_frame$date)
 
 # View
 head(merged_data_frame)
+```
+
+<h1>Methods</h1>
+<p>Will write here later<p>
+```{r}
 
 ```
 
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                                  Methods                                 ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<h1>Results</h1>
+<p>Will write here later<p>
 
-```{r}
-#P lotting the data
+```{r, echo = FALSE}
+#Plotting the data
 # Runs the testing file
+
 merged_plots <- create_combined_graph() + plot_layout(axes = "collect", guides = "collect") & 
   theme(plot.margin = unit(c(0.1,0.1,0.1,0.1), "cm"), 
         axis.title.x = element_text(hjust = 0.5, size = 15))
-```
 
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                                  Results                                 ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-```{r}
 merged_plots 
 
-ggsave(plot = merged_plots, here::here("figs", "merged_plots.jpg"), width = 6, height = 4)
+ggsave(plot = merged_plots, here::here("outputs", "figs", "merged_plots.jpg"), width = 6, height = 4)
+
 ```
