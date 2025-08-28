@@ -7,6 +7,7 @@ format:
   html:
     ouput-file: "paper.html"
 ---
+
 ```{r}
 #| include: false
  
@@ -27,28 +28,19 @@ source("../R/weeks_to_dates.R")
 source("../R/create_combined_graph.R")
 ```
 
-```{r}
-#| include: false
-
-#Install Required Packages
-library(here)
-library(janitor)
-library(tidyverse)
-library(lubridate)
-library(patchwork)
-library(hrbrthemes)
-library(viridis)
-library(paletteer)
-
-# Load functions 
-source("../R/roll_mean.R")
-source("../R/weeks_since_start.R")
-source("../R/weeks_to_dates.R")
-source("../R/create_combined_graph.R")
-```
-
 <h1>Background</h1>
-<p>Will write here later<p>
+Schaefer et al. (
+<a href="https://eds-214-workflows-reproducibility.github.io/course-materials/interactive/interactive-day1am.html#ref-schaefer2000" role="doc-biblioref" data-original-href="https://eds-214-workflows-reproducibility.github.io/course-materials/interactive/interactive-day1am.html#ref-schaefer2000" aria-expanded="false">2000</a>
+)
+conducted a long term investigation into the effects of Hurricane Hugo on the water quality of streams in Puerto Rico.
+
+
+
+
+
+<h1>Data</h1>
+<p>r<p>
+
 
 ```{r, echo = FALSE}
 # Read in clean data
@@ -57,7 +49,7 @@ merged_data_frame$date <-lubridate::as_date(merged_data_frame$date)
 
 # View
 data_sub <- head(merged_data_frame) 
-knitr::kable(data_sub)
+knitr::kable(data_sub, digits = 3)
 ```
 
 <h1>Methods</h1>
@@ -82,3 +74,5 @@ merged_plots
 ggsave(plot = merged_plots, here::here("outputs", "figs", "merged_plots.jpg"), width = 6, height = 4)
 
 ```
+
+<a href="https://github.com/willrmull/eds-214-water-quality" class="btn btn-lg btn-primary">View Repository on Github</a>

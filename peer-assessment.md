@@ -76,3 +76,27 @@ There is one merged branch in the commit history from the interactive sessions.
 ## [Meets spec] The rendered analysis is accessible via GitHub Pages
 
 The Quarto document renders properly but does deploys in a funky format in GitHub pages. 
+
+# Collaborate
+
+### The student has provided attentive, constructive feedback in a peer review
+Yes
+
+### The student has contributed to a peer’s repo by opening an issue and creating a pull request
+Yes
+
+### The repo has at least three closed GitHub issues
+Yes
+
+### The commit history includes at least one merged branch and a resolved merge conflict
+Yes
+
+### The rendered analysis is accessible via GitHub Pages
+Yes
+
+
+
+
+
+
+

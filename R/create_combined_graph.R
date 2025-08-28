@@ -24,7 +24,8 @@ k_plot <- ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_k, gro
                      minor_breaks = c(0.55, .85, 1.15, 1.45),
                      limits = c(.4,1.6)) +
   scale_color_viridis(discrete = TRUE) + 
-  theme(plot.margin = unit(c(0,0, 0.1,1), "cm")) + theme_ipsum()
+  theme(plot.margin = unit(c(0,0, 0.1,1), "cm")) + 
+  theme_ipsum()
 #no3_n Plot
 no3_n_plot <-ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_no3_n, group = data_source, colour = data_source)) +
   geom_line() +
@@ -69,7 +70,6 @@ ca_plot <- ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_ca, g
                      limits = c(0, 10)) +
   scale_color_viridis(discrete = TRUE) + 
   theme(plot.margin = unit(c(0,0,0.1,0), "cm")) + theme_ipsum()
-
 
 #nh4_n_plot
 nh4_n_plot <- ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_nh4_n, group = data_source, colour = data_source)) +
