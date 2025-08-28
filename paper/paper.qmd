@@ -1,7 +1,10 @@
 ---
 title: "paper"
-format: html
+format: 
+  html:
+    ouput-file: "index.html"
 editor: visual
+
 ---
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
