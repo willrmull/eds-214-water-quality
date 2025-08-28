@@ -1,15 +1,16 @@
 ---
-title: "Water Quality Final"
+title: "paper"
 format: html
 editor: visual
 ---
+
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                                                                            --
-##-------------------------- Water Quality Analysis-----------------------------
-##                                                                            --
+##                                 Background                               ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#
+
 ```{r}
+#| include: false
+
 #Install Required Packages
 library(here)
 library(janitor)
@@ -25,11 +26,15 @@ source("../functions/roll_mean.R")
 source("../functions/weeks_since_start.R")
 source("../functions/weeks_to_dates.R")
 source("../functions/create_combined_graph.R")
+```
 
-#                                                                         --
-##------------------------------- Read in Files---------------------------------
-#
-# Reading in each file and creating a subset of the data we are interested in 
+  
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                    Data                                  ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+```{r}
+# Reading in each file and creating a subset of the data we are interested in
 bq1 <- read.csv(here::here("data", "knb-lter-luq.20.4923064", "QuebradaCuenca1-Bisley.csv")) %>%
   clean_names() %>%
   mutate(sample_id = case_when(
@@ -57,20 +62,23 @@ pmr <- read.csv(here::here("data", "knb-lter-luq.20.4923064", "RioMameyesPuenteR
     sample_id == "MPR" ~ "PRM")) %>% 
   mutate(year = lubridate::year(sample_date)) %>% 
   filter(1988 <= year & year <= 1994)
+```
 
-#                                                                      
-##---------------------------- Rolling Mean Data -------------------------------
-#
 
-# The weeks_since_start function takes in the input data frame and creates a list 
-# of weeks. The value of each week is equal to time between the initial observation and 
-# a given observation
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                  Methods                                 ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+```{r}
+# The weeks_since_start function copies the input data frame and adds 
+# a new column containing the number of weeks that have passed since the initial
+# observation
 bq1$weeks_since <- weeks_since_start(bq1)
 bq2$weeks_since <- weeks_since_start(bq2)
 bq3$weeks_since <- weeks_since_start(bq3)
 pmr$weeks_since <- weeks_since_start(pmr)
 
-# The rolling_mean functions calculates the rolling mean of five columns of 
+# The roll_mean functions calculates the rolling mean of five columns of 
 # interest in 9 week windows. Returns a data frame containing those rolling means
 # and the weeks since the start
 bq1_cleaned <- roll_mean(bq1)
@@ -78,7 +86,7 @@ bq2_cleaned <- roll_mean(bq2)
 bq3_cleaned <- roll_mean(bq3)
 pmr_cleaned <- roll_mean(pmr)
 
-# The weeks_to_date function converts column containing weeks since the start
+# The rolling_mean function converts column containing weeks since the start
 # back into a standard date format.
 bq1_cleaned <- weeks_to_dates(bq1_cleaned)
 bq2_cleaned <- weeks_to_dates(bq2_cleaned)
@@ -95,15 +103,24 @@ merged_data_frame <- bind_rows(bq1_cleaned, bq2_cleaned, bq3_cleaned, pmr_cleane
     data_source == 3 ~ "BQ3",
     data_source == 4 ~ "PRM"
   ))
-#                                                                      
-##------------------------------- Plotting Data --------------------------------
-#
+
+#Plotting the data
 # Runs the testing file
 merged_plots <- create_combined_graph() + plot_layout(axes = "collect", guides = "collect") & 
   theme(plot.margin = unit(c(0.1,0.1,0.1,0.1), "cm"), 
         axis.title.x = element_text(hjust = 0.5, size = 15))
+```
+
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                  Results                                 ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+```{r}
 merged_plots 
 
-
-ggsave(here::here("figs", ))
+ggsave(plot = merged_plots, here::here("figs", "merged_plots.jpg"), width = 6, height = 4)
 ```
+
+
+
