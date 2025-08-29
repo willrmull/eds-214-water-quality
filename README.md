@@ -49,7 +49,8 @@ In order to replicate the visualizations produced by Schaefer et al. (2000), the
   > Initiative. https://doi.org/10.6073/pasta/f31349bebdc304f758718f4798d25458 
   > (Accessed 2025-08-26)
 
+![Graph output by the paper.qmd file](https://github.com/willrmull/eds-214-water-quality/blob/80c9bfb6f3f32111297221b491ecfbc2619f195d/outputs/figs/merged_plots.jpg)
 =======
 <p align="center">
-![Grqph output by the paper.qmd file](https://github.com/willrmull/eds-214-water-quality/blob/80c9bfb6f3f32111297221b491ecfbc2619f195d/outputs/figs/merged_plots.jpg)
+    <img src="http://some_place.com/image.png](https://github.com/willrmull/eds-214-water-quality/blob/80c9bfb6f3f32111297221b491ecfbc2619f195d/outputs/figs/merged_plots.jpg" />
 </p>
