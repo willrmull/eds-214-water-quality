@@ -18,6 +18,8 @@ library(lubridate)
 library(patchwork)
 library(viridis)
 library(hrbrthemes)
+library(knitr)
+library(kableExtra)
 
 # Load functions 
 source("../R/roll_mean.R")
@@ -42,7 +44,7 @@ merged_data_frame$date <-lubridate::as_date(merged_data_frame$date)
 
 # View
 data_sub <- head(merged_data_frame) 
-knitr::kable(data_sub, digits = 3)
+knitr::kable(data_sub, digits = 2, align = "ccccccc") %>% remove_column(1)
 ```
 
 <h1>Methods</h1>

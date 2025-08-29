@@ -40,6 +40,8 @@ ul.task-list li input[type="checkbox"] {
         background: dark;
       }
 </style>
+<script src="paper_files/libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="paper_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
 </head>
@@ -86,107 +88,92 @@ Data
 <p>Of the measurements they took, the ones of interest to the project are the milligrams of potassium (K), nitrate (NO3), calcium (Ca), magnesium (Mg), and ammonia (NH4). Using the dates attached to these measurements, the rolling means of each variable were calculated and subsequently plotted.</p>
 <div class="cell">
 <div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 2%">
-<col style="width: 10%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 16%">
-<col style="width: 4%">
-<col style="width: 9%">
-</colgroup>
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th style="text-align: right;">X</th>
-<th style="text-align: left;">data_source</th>
-<th style="text-align: right;">rolling_mean_k</th>
-<th style="text-align: right;">rolling_mean_no3_n</th>
-<th style="text-align: right;">rolling_mean_mg</th>
-<th style="text-align: right;">rolling_mean_ca</th>
-<th style="text-align: right;">rolling_mean_nh4_n</th>
-<th style="text-align: right;">week</th>
-<th style="text-align: left;">date</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">data_source</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">rolling_mean_k</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">rolling_mean_no3_n</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">rolling_mean_mg</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">rolling_mean_ca</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">rolling_mean_nh4_n</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">week</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">date</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">BQ1</td>
-<td style="text-align: right;">0.787</td>
-<td style="text-align: right;">154.375</td>
-<td style="text-align: right;">2.188</td>
-<td style="text-align: right;">3.449</td>
-<td style="text-align: right;">27.375</td>
-<td style="text-align: right;">4.5</td>
-<td style="text-align: left;">1988-01-29</td>
+<td style="text-align: center;">BQ1</td>
+<td style="text-align: center;">0.79</td>
+<td style="text-align: center;">154.38</td>
+<td style="text-align: center;">2.19</td>
+<td style="text-align: center;">3.45</td>
+<td style="text-align: center;">27.38</td>
+<td style="text-align: center;">4.5</td>
+<td style="text-align: center;">1988-01-29</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">BQ1</td>
-<td style="text-align: right;">0.901</td>
-<td style="text-align: right;">206.938</td>
-<td style="text-align: right;">1.994</td>
-<td style="text-align: right;">3.104</td>
-<td style="text-align: right;">20.688</td>
-<td style="text-align: right;">9.0</td>
-<td style="text-align: left;">1988-03-04</td>
+<td style="text-align: center;">BQ1</td>
+<td style="text-align: center;">0.90</td>
+<td style="text-align: center;">206.94</td>
+<td style="text-align: center;">1.99</td>
+<td style="text-align: center;">3.10</td>
+<td style="text-align: center;">20.69</td>
+<td style="text-align: center;">9.0</td>
+<td style="text-align: center;">1988-03-04</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">BQ1</td>
-<td style="text-align: right;">0.924</td>
-<td style="text-align: right;">203.889</td>
-<td style="text-align: right;">1.962</td>
-<td style="text-align: right;">3.085</td>
-<td style="text-align: right;">24.056</td>
-<td style="text-align: right;">13.5</td>
-<td style="text-align: left;">1988-04-01</td>
+<td style="text-align: center;">BQ1</td>
+<td style="text-align: center;">0.92</td>
+<td style="text-align: center;">203.89</td>
+<td style="text-align: center;">1.96</td>
+<td style="text-align: center;">3.08</td>
+<td style="text-align: center;">24.06</td>
+<td style="text-align: center;">13.5</td>
+<td style="text-align: center;">1988-04-01</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">4</td>
-<td style="text-align: left;">BQ1</td>
-<td style="text-align: right;">0.877</td>
-<td style="text-align: right;">151.700</td>
-<td style="text-align: right;">2.251</td>
-<td style="text-align: right;">3.190</td>
-<td style="text-align: right;">64.200</td>
-<td style="text-align: right;">18.0</td>
-<td style="text-align: left;">1988-05-06</td>
+<td style="text-align: center;">BQ1</td>
+<td style="text-align: center;">0.88</td>
+<td style="text-align: center;">151.70</td>
+<td style="text-align: center;">2.25</td>
+<td style="text-align: center;">3.19</td>
+<td style="text-align: center;">64.20</td>
+<td style="text-align: center;">18.0</td>
+<td style="text-align: center;">1988-05-06</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">5</td>
-<td style="text-align: left;">BQ1</td>
-<td style="text-align: right;">0.881</td>
-<td style="text-align: right;">157.500</td>
-<td style="text-align: right;">2.034</td>
-<td style="text-align: right;">2.985</td>
-<td style="text-align: right;">90.625</td>
-<td style="text-align: right;">22.5</td>
-<td style="text-align: left;">1988-06-03</td>
+<td style="text-align: center;">BQ1</td>
+<td style="text-align: center;">0.88</td>
+<td style="text-align: center;">157.50</td>
+<td style="text-align: center;">2.03</td>
+<td style="text-align: center;">2.98</td>
+<td style="text-align: center;">90.62</td>
+<td style="text-align: center;">22.5</td>
+<td style="text-align: center;">1988-06-03</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">6</td>
-<td style="text-align: left;">BQ1</td>
-<td style="text-align: right;">0.766</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">2.267</td>
-<td style="text-align: right;">3.298</td>
-<td style="text-align: right;">113.000</td>
-<td style="text-align: right;">27.0</td>
-<td style="text-align: left;">1988-07-08</td>
+<td style="text-align: center;">BQ1</td>
+<td style="text-align: center;">0.77</td>
+<td style="text-align: center;">NA</td>
+<td style="text-align: center;">2.27</td>
+<td style="text-align: center;">3.30</td>
+<td style="text-align: center;">113.00</td>
+<td style="text-align: center;">27.0</td>
+<td style="text-align: center;">1988-07-08</td>
 </tr>
 </tbody>
 </table>
+
+
 </div>
 </div>
 <h1>
 Methods
 </h1>
 <p>The data was read in and subset to contain only dates located between 1988 and 1994 in order to match the data used in figure 3. After that, in order to calculate the rolling mean, the data was first formatted in the weeks_since_start() function to contain an additional column which contains the number of weeks that have passed between the initial observation and the current observation. This step allows for all observations in a 9 week range to be selected.</p>
-<p>The data frame containing the new column is input into the roll_mean() function which calculates the rolling mean. The function first creates a sequence from 4.5 to the largest number in the week column added before, and counts between the two values by 4.5. A for loop is then used to iterate across the columns containing the five variables mentioned in the background section. That for loop contains a second for loop, which iterates across the sequence generated in the function to create subsets of the data in the columns and finds the mean values in those ranges. The means are then added into a new data frame. A new data frame containing the rolling means of each column and the week count group they belong to is output from the function. Data frame output by that function then has its week column converted back into dates using the weeks_to_dates function. The data frames are then merged. Using the create_combined_graphs function, graphs of each of the five variables are made using ggplot, and they are then merged using patchwork, creating a stack of plots.</p>
+<p>The data frame containing the new column is input into the roll_mean() function which calculates the rolling mean. The function first creates a sequence from 4.5 to the largest number in the week column added before, and counts between the two values by 4.5. A for loop is then used to iterate across the columns containing the five variables mentioned in the background section. That for loop contains a second for loop, which iterates across the sequence generated in the function to create subsets of the data in the columns and finds the mean values in those ranges. The means are then added into a new data frame. A new data frame containing the rolling means of each column and the week count group they belong to is output from the function.</p>
+<p>The data frame output by that function then has the week column created earlier converted back into a standard date format using the weeks_to_dates function. The data frames are then merged together by rows with a column added to distinguish the different data frames. Using the create_combined_graphs function, graphs of each of the five variables are made using ggplot, and they are then merged using patchwork, creating a stack of plots.</p>
 <h1>
 Results
 </h1>
