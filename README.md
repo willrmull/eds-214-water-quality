@@ -1,10 +1,12 @@
 ## Water Quality Analysis of Puerto Rico Streams 
-This repository contains code used for a final project done in August of 2025. It's goal is to plot the moving average of chemical concentrations in four Puerto Rican streams between the years 1988 and 1994. The purpose of this project is to create an analytical workflow to replicate Figure 3 of the study by Schaefer et al. (2000). This workflow applies the basic principles of a reproducible data analysis workflow (Lowndes et al. 2017). 
+    This repository contains code used for a final project done in August of 2025. It's goal is to plot the moving average of chemical concentrations in four Puerto Rican streams between the years 1988 and 1994. The purpose of this project is to create an analytical workflow to replicate Figure 3 of the study by Schaefer et al. (2000). This workflow applies the basic principles of a reproducible data analysis workflow (Lowndes et al. 2017). 
 
 # Process Flow
-![Flow Chart](https://github.com/willrmull/eds-214-water-quality/blob/687059c7fa60ac55554d9b1635ac3d2d6dad7a05/outputs/figs/flow_chart.png)
+<p align="center">
+    <img src="https://github.com/willrmull/eds-214-water-quality/blob/687059c7fa60ac55554d9b1635ac3d2d6dad7a05/outputs/figs/flow_chart.png"
+</p>
 
-In order to replicate the visualizations produced by Schaefer et al. (2000), the data is read in and filtered to contain only measurements between 1988 and 1994. After that, each of the four datasets have a column added containing the number of weeks which had passed since the inital observation. Using this week information, the moving average of five columns is taken in 9 week intervals across the entire dataset. After that, the week column is converted back to standard dates, and the four datasets are merged. Each variable is graphed seperatly and later combined into a stacked plot which is output to the user.  
+    In order to replicate the visualizations produced by Schaefer et al. (2000), the data is read in and filtered to contain only measurements between 1988 and 1994. After that, each of the four datasets have a column added containing the number of weeks which had passed since the inital observation. Using this week information, the moving average of five columns is taken in 9 week intervals across the entire dataset. After that, the week column is converted back to standard dates, and the four datasets are merged. Each variable is graphed seperatly and later combined into a stacked plot which is output to the user.  
 
 # Contents 
 <table>
