@@ -11,7 +11,7 @@
 #' 
 
 create_combined_graph <- function(merged_data_frame){
-#K plot
+# Plot of K
 k_plot <- ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_k, group = data_source, colour = data_source)) +
   geom_line() +
   labs(y = expression(paste("K mg ", I^{-1})),
@@ -26,7 +26,8 @@ k_plot <- ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_k, gro
   scale_color_viridis(discrete = TRUE) + 
   theme(plot.margin = unit(c(0,0, 0.1,1), "cm")) + 
   theme_ipsum()
-#no3_n Plot
+
+# Plot of NO3-N
 no3_n_plot <-ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_no3_n, group = data_source, colour = data_source)) +
   geom_line() +
   labs(y = expression(paste(NO[3], "-N ug ", I^{-1})),
@@ -39,9 +40,10 @@ no3_n_plot <-ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_no3
                      minor_breaks = c(200, 400),
                      limits = c(50, 500)) +
   scale_color_viridis(discrete = TRUE) + 
-  theme(plot.margin = unit(c(0,0,.1,0), "cm")) + theme_ipsum()
+  theme(plot.margin = unit(c(0,0,.1,0), "cm")) + 
+  theme_ipsum()
 
-#mg_plot
+# Plot of Mg
 mg_plot <- ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_mg, group = data_source, colour = data_source)) +
   geom_line() +
   labs(y = expression(paste("Mg mg ", I^{-1})),
@@ -54,9 +56,10 @@ mg_plot <- ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_mg, g
                      minor_breaks = c(.5,1.5,2.5,3.5,4.5),
                      limits = c(0, 5)) +
   scale_color_viridis(discrete = TRUE) + 
-  theme(plot.margin = unit(c(0,0,0.1,0), "cm"))+ theme_ipsum()
+  theme(plot.margin = unit(c(0,0,0.1,0), "cm")) + 
+  theme_ipsum()
 
-#ca_plot
+# Plot of Ca
 ca_plot <- ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_ca, group = data_source, colour = data_source)) +
   geom_line() +
   labs(y = expression(paste("Ca mg ", I^{-1})),
@@ -69,9 +72,10 @@ ca_plot <- ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_ca, g
                      minor_breaks = c(1,3,5,7,9),
                      limits = c(0, 10)) +
   scale_color_viridis(discrete = TRUE) + 
-  theme(plot.margin = unit(c(0,0,0.1,0), "cm")) + theme_ipsum()
+  theme(plot.margin = unit(c(0,0,0.1,0), "cm")) + 
+  theme_ipsum()
 
-#nh4_n_plot
+# Plot of NH34-N
 nh4_n_plot <- ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_nh4_n, group = data_source, colour = data_source)) +
   geom_line() +
   labs(y = expression(paste(NH[4], "-N ug ", I^{-1})),
@@ -84,11 +88,15 @@ nh4_n_plot <- ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_nh
                      minor_breaks = c(10,30,50,70),
                      limits = c(0, 80)) + 
   scale_color_viridis(discrete = TRUE) + 
-  theme(plot.margin = unit(c(0,0,0.1,0), "cm")) + theme_ipsum()
+  theme(plot.margin = unit(c(0,0,0.1,0), "cm")) + 
+  theme_ipsum()
 
+# Plots are merged into a variable, formatted
 merged_plots <- (k_plot / no3_n_plot / mg_plot / ca_plot / nh4_n_plot) 
 merged_plots + plot_layout(axes = "collect", guides = "collect") & 
   theme(plot.margin = unit(c(0.1,0.1,0.1,0.1), "cm"), 
         axis.title.x = element_text(hjust = 0.5, size = 15))
+
+# return the graph
 return(merged_plots)
 }
