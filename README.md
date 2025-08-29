@@ -3,12 +3,11 @@ This repository contains code used for a final project done in August of 2025. I
 
 <table border="0">
  <tr>
-    <td><b style="font-size:30px">Title</b></td>
-    <td><b style="font-size:30px">Title 2</b></td>
  </tr>
  <tr>
-    <td>Lorem ipsum ...</td>
-    <td>Lorem ipsum ...</td>
+    <td>awefawefawefw</td>
+    <td>![Grqph output by the paper.qmd file](https://github.com/willrmull/eds-214-water-quality/blob/687059c7fa60ac55554d9b1635ac3d2d6dad7a05/outputs/figs/flow_chart.png)
+</td>
  </tr>
 </table>
 
