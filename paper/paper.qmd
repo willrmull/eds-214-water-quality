@@ -10,16 +10,14 @@ format:
 
 ```{r}
 #| include: false
- 
-#Install Required Packages
+
 library(here)
 library(janitor)
 library(tidyverse)
 library(lubridate)
 library(patchwork)
-library(hrbrthemes)
 library(viridis)
-library(paletteer)
+library(hrbrthemes)
 
 # Load functions 
 source("../R/roll_mean.R")

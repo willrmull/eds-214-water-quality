@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -30,10 +30,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="paper_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="paper_files/libs/quarto-html/anchor.min.js"></script>
 <link href="paper_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="paper_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="paper_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="paper_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="paper_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="paper_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="paper_files/libs/bootstrap/bootstrap-e64f0373aecd96a0501e06a3c6cba34c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <style>
 
       .quarto-title-block .quarto-title-banner {
@@ -79,11 +79,11 @@ ul.task-list li input[type="checkbox"] {
 <h1>
 Background
 </h1>
-<p>Schaefer et al.&nbsp;( <a href="https://eds-214-workflows-reproducibility.github.io/course-materials/interactive/interactive-day1am.html#ref-schaefer2000" role="doc-biblioref" data-original-href="https://eds-214-workflows-reproducibility.github.io/course-materials/interactive/interactive-day1am.html#ref-schaefer2000" aria-expanded="false">2000</a> ) conducted a long term investigation into the effects of Hurricane Hugo on the water quality of streams in Puerto Rico. They did this by continuously taking measurements of the waters composition after the hurricane hit, which could then be compared against measurements taken years prior. It is the goal of this project to recreate the recreate the third figure found in the aforementioned research paper.</p>
+Schaefer et al.&nbsp;( <a href="https://eds-214-workflows-reproducibility.github.io/course-materials/interactive/interactive-day1am.html#ref-schaefer2000" role="doc-biblioref" data-original-href="https://eds-214-workflows-reproducibility.github.io/course-materials/interactive/interactive-day1am.html#ref-schaefer2000" aria-expanded="false">2000</a> ) conducted a long-term investigation into the effects of Hurricane Hugo on the water quality of streams in Puerto Rico. They did this by continuously taking measurements of the water’s composition after the hurricane hit, which could then be compared against measurements taken years prior. It is the goal of this project to recreate the third figure found in the aforementioned research paper.
 <h1>
 Data
 </h1>
-<p>Of the measurements they took, the ones of interest to the project are the milligrams of potassium (K), nitrate (NO3), calcium (ca), magnesium (mg), and ammonia (NH4). Using the dates attached to these measurements, the rolling means of each variable where calculated and subsequently plotted.</p>
+<p>Of the measurements they took, the ones of interest to the project are the milligrams of potassium (K), nitrate (NO3), calcium (Ca), magnesium (Mg), and ammonia (NH4). Using the dates attached to these measurements, the rolling means of each variable were calculated and subsequently plotted.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -185,14 +185,11 @@ Data
 <h1>
 Methods
 </h1>
-<p>In order to find the rolling mean, the data was first formatted to have an additional column containing the number of weeks between the initial observation and the current observation. This task was implemented into the function weeks_since_start. After that the data frame is inserted into the roll_mean function, which calculates the mean value of each column in 4.5 week intervals and 9 week windows. Data frame output by that function then has it’s week column converted back into dates using the weeks_to_dates function. The data frames are then merged. Using the create_combined_graphs function, graphs of each opf the five variables are made using ggplot, and they are then merged together using patchwork, creating a stack of plots.</p>
+<p>In order to find the rolling mean, the data was first formatted to have an additional column containing the number of weeks between the initial observation and the current observation. This task was implemented in the function weeks_since_start. After that, the data frame is inserted into the roll_mean function, which calculates the mean value of each column in 4.5-week intervals and 9-week windows. Data frame output by that function then has its week column converted back into dates using the weeks_to_dates function. The data frames are then merged. Using the create_combined_graphs function, graphs of each of the five variables are made using ggplot, and they are then merged using patchwork, creating a stack of plots.</p>
 <h1>
 Results
 </h1>
-<p>
-Will write here later
-</p><p>
-</p><div class="cell">
+<div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -240,18 +237,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -283,7 +269,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -291,7 +297,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -388,7 +394,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
