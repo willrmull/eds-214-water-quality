@@ -1,6 +1,8 @@
 ## Water Quality Analysis of Puerto Rico Streams 
 This repository contains code used for a final project done in August of 2025. It's goal is to plot the moving average of chemical concentrations in four Puerto Rican streams between the years 1988 and 1994. The purpose of this project is to create an analytical workflow to replicate Figure 3 of the study by Schaefer et al. (2000). This workflow applies the basic principles of a reproducible data analysis workflow (Lowndes et al. 2017). 
 
+![Grqph output by the paper.qmd file]([lots.jpg](https://github.com/willrmull/eds-214-water-quality/blob/687059c7fa60ac55554d9b1635ac3d2d6dad7a05/outputs/figs/flow_chart.pdf))
+
 # Contents 
 Will add later once files are finalized
 
