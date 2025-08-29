@@ -46,7 +46,10 @@ knitr::kable(data_sub, digits = 3)
 ```
 
 <h1>Methods</h1>
-In order to find the rolling mean, the data was first formatted to have an additional column containing the number of weeks between the initial observation and the current observation. This task was implemented in the function weeks_since_start. After that, the data frame is inserted into the roll_mean function, which calculates the mean value of each column in 4.5-week intervals and 9-week windows. Data frame output by that function then has its week column converted back into dates using the weeks_to_dates function. The data frames are then merged. Using the create_combined_graphs function, graphs of each of the five variables are made using ggplot, and they are then merged using patchwork, creating a stack of plots.
+The data was read in and subset to contain only dates located between 1988 and 1994 in order to match the data used in figure 3. After that, in order to calculate the rolling mean, the data was first formatted in the weeks_since_start() function to contain an additional column which contains the number of weeks that have passed between the initial observation and the current observation. This step allows for all observations in a 9 week range to be selected. 
+
+The data frame containing the new column is input into the roll_mean() function which calculates the rolling mean. The function first creates a sequence from 4.5 to the largest number in the week column added before, and counts between the two values by 4.5. A for loop is then used to iterate across the columns containing the five variables mentioned in the background section. That for loop contains a second for loop, which iterates across the sequence generated in the function to create subsets of the data in the columns and finds the mean values in those ranges. The means are then added into a new data frame. A new data frame containing the rolling means of each column and the week count group they belong to is output from the function.
+ Data frame output by that function then has its week column converted back into dates using the weeks_to_dates function. The data frames are then merged. Using the create_combined_graphs function, graphs of each of the five variables are made using ggplot, and they are then merged using patchwork, creating a stack of plots.
 
 <h1>Results</h1>
 

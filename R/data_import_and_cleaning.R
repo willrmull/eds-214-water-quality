@@ -67,7 +67,6 @@
       data_source == 3 ~ "BQ3",
       data_source == 4 ~ "PRM"
     ))
-  return(merged_data_frame)
   #save merged data frame as csv
   write.csv(merged_data_frame, here::here("outputs", "clean_data.csv"))
 
