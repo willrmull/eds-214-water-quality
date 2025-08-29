@@ -3,7 +3,7 @@ This repository contains code used for a final project done in August of 2025. I
 <tr>
 <td>
 <!-- REMOVE THE BACKSLASHES -->
-\```jsonc
+```jsonc
 {
   "foo": [
     {
@@ -11,12 +11,12 @@ This repository contains code used for a final project done in August of 2025. I
     }
   ]
 }
-\```
+```
   
 </td>
 <td>
 <!-- REMOVE THE BACKSLASHES -->
-\```jsonc
+```jsonc
 {
   "foo": [
     {
@@ -24,7 +24,7 @@ This repository contains code used for a final project done in August of 2025. I
     }
   ]
 }
-\```
+```
   
 </td>
 </tr>
