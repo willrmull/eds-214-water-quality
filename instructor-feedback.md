@@ -30,6 +30,8 @@
 [NY] **The analysis produces the expected output**
 - Missing `geom_vline()` to denote when Hurricane hugo occured in `ggplot()` object
 
+I met this criteria now
+
 [M] **Data import/cleaning is handled in its own script(s)**
 
 ## Organize

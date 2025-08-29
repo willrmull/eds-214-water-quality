@@ -14,6 +14,7 @@ create_combined_graph <- function(merged_data_frame){
 # Plot of K
 k_plot <- ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_k, group = data_source, colour = data_source)) +
   geom_line() +
+  geom_vline(xintercept = as.numeric(merged_data_frame$date[c(19)]), linetype = "dashed", color = "black") +
   labs(y = expression(paste("K mg ", I^{-1})),
        x = "Year",
        colour = "Data Source") +
@@ -30,6 +31,7 @@ k_plot <- ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_k, gro
 # Plot of NO3-N
 no3_n_plot <-ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_no3_n, group = data_source, colour = data_source)) +
   geom_line() +
+  geom_vline(xintercept = as.numeric(merged_data_frame$date[c(19)]), linetype = "dashed", color = "black") +
   labs(y = expression(paste(NO[3], "-N ug ", I^{-1})),
        x = "Year",
        colour = "Data Source") +
@@ -46,6 +48,7 @@ no3_n_plot <-ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_no3
 # Plot of Mg
 mg_plot <- ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_mg, group = data_source, colour = data_source)) +
   geom_line() +
+  geom_vline(xintercept = as.numeric(merged_data_frame$date[c(19)]), linetype = "dashed", color = "black") +
   labs(y = expression(paste("Mg mg ", I^{-1})),
        x = "Year",
        colour = "Data Source") +
@@ -62,6 +65,7 @@ mg_plot <- ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_mg, g
 # Plot of Ca
 ca_plot <- ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_ca, group = data_source, colour = data_source)) +
   geom_line() +
+  geom_vline(xintercept = as.numeric(merged_data_frame$date[c(19)]), linetype = "dashed", color = "black") +
   labs(y = expression(paste("Ca mg ", I^{-1})),
        x = "Year",
        colour = "Data Source") +
@@ -78,6 +82,7 @@ ca_plot <- ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_ca, g
 # Plot of NH34-N
 nh4_n_plot <- ggplot(data = merged_data_frame, aes(x = date, y = rolling_mean_nh4_n, group = data_source, colour = data_source)) +
   geom_line() +
+  geom_vline(xintercept = as.numeric(merged_data_frame$date[c(19)]), linetype = "dashed", color = "black") +
   labs(y = expression(paste(NH[4], "-N ug ", I^{-1})),
        x = "Year",
        colour = "Data Source") +
@@ -100,3 +105,4 @@ merged_plots + plot_layout(axes = "collect", guides = "collect") &
 # return the graph
 return(merged_plots)
 }
+
