@@ -13,10 +13,13 @@ In order to replicate the visualizations produced by Schaefer et al. (2000), the
         - Item A
         - Item B
       </td>
+    <tr>
+    </tr>
       <td width="50%">
         - Item A
         - Item B
       </td>
+    <tr>
       <td width="50%">
         ![Grqph output by the paper.qmd file](https://github.com/willrmull/eds-214-water-quality/blob/687059c7fa60ac55554d9b1635ac3d2d6dad7a05/outputs/figs/flow_chart.png)
       </td>
