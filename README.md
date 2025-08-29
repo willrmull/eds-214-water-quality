@@ -5,15 +5,13 @@ This repository contains code used for a final project done in August of 2025. I
     <tr>
       <td width="50%">
         <!-- Content for column 1 -->
-        ### Column 1 Header
         - Item A
         - Item B
       </td>
       <td width="50%">
         <!-- Content for column 2 -->
         ### Column 2 Header
-        - Item X
-        - Item Y
+        ![Grqph output by the paper.qmd file](https://github.com/willrmull/eds-214-water-quality/blob/687059c7fa60ac55554d9b1635ac3d2d6dad7a05/outputs/figs/flow_chart.png)
       </td>
      </tr>
   </table>
