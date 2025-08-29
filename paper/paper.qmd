@@ -76,3 +76,6 @@ ggsave(plot = merged_plots, here::here("outputs", "figs", "merged_plots.jpg"), w
 ```
 
 <a href="https://github.com/willrmull/eds-214-water-quality" class="btn btn-lg btn-primary">View Repository on Github</a>
+
+<a href="https://github.com/microsoft/vscode">
+<img src="/assets/icons/github-icon.svg" alt="VS Code on Github"></a>
