@@ -10,20 +10,34 @@ In order to replicate the visualizations produced by Schaefer et al. (2000), the
 <table>
     <tr>
       <td width="50%">
-        - Item A
-        - Item B
+        Data Files
       </td>
       <td width="50%">
-        ![Grqph output by the paper.qmd file](https://github.com/willrmull/eds-214-water-quality/blob/687059c7fa60ac55554d9b1635ac3d2d6dad7a05/outputs/figs/flow_chart.png)
+        Raw data files are located in the data folder of the repository. \n The cleaned data used in the scripts can be found in the "outputs" folder
       </td>
      </tr>
     </tr>
         <td width="50%">
-        - Item A
-        - Item B
+        Analysis Script
       </td>
       <td width="50%">
-        ![Grqph output by the paper.qmd file](https://github.com/willrmull/eds-214-water-quality/blob/687059c7fa60ac55554d9b1635ac3d2d6dad7a05/outputs/figs/flow_chart.png)
+        The analysis script is titled "paper.qmd" and can be found in the folder titled "paper"
+      </td>
+    </tr>
+    </tr>
+        <td width="50%">
+        Supporting Code
+      </td>
+      <td width="50%">
+        The functions as well as the script used to read in data are located in the "R" folder
+      </td>
+    </tr>
+    </tr>
+        <td width="50%">
+        Outputs
+      </td>
+      <td width="50%">
+        The figure of the five graphs is output into the "figs" folder located in "outputs"
       </td>
     </tr>
   </table>
