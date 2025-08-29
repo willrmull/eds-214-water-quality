@@ -12,4 +12,4 @@ Will add later once files are finalized
   > (Accessed 2025-08-26)
 > 
 
-![Graph output by paper.qmd](https://github.com/willrmull/eds-214-water-quality/outputs/figs/merged_plots.jpg "Figure 1")
+![Graph output by paper.qmd](https://github.com/willrmull/eds-214-water-quality/outputs/figs/merged_plots.jpg)
